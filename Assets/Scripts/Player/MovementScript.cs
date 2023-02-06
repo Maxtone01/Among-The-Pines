@@ -19,17 +19,14 @@ public class MovementScript : MonoBehaviour
 
     float currentSpeed;
 
-    private void Awake()
-    {
-    }
-
     private void Start()
     {
         _playerController = GetComponent<PlayerController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        Debug.Log("Game isn't paused!");
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
 

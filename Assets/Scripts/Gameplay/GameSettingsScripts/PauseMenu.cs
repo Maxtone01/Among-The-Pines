@@ -1,15 +1,24 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    [Header("GameState")]
     public bool gameIsPaused = false;
 
+    [Header("PauseMenus")]
+    public GameObject pauseMenuUI;
     public GameObject pauseMenu;
+    public GameObject optionsMenuUI;
     public GameObject optionsMenu;
+    public GameObject videoSettings;
+    public GameObject controlsSettings;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,9 +36,9 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        Time.timeScale = 0f;
         Cursor.visible = true;
         pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
         gameIsPaused = true;
     }
 
@@ -39,24 +48,40 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
+
+        /*We need to check if "options" menu is active, if so, 
+         set state to active to pause menu component and unactive to options
+         It needs for properly showing elements of pause menu when escape is pressed again from the game*/
         if (optionsMenu.activeSelf)
         {
             optionsMenu.SetActive(false);
+            pauseMenuUI.SetActive(true);
         }
-        Debug.Log("Pressed!");
     }
 
     public void OptionsMenu()
     {
-        pauseMenu.SetActive(false);
+        pauseMenuUI.SetActive(false);
         optionsMenu.SetActive(true);
-        Debug.Log("Pressed!");
     }
 
     public void OpenMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        Debug.Log("Pressed!");
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+    }
+
+    public void Controls()
+    {
+        optionsMenuUI.SetActive(false);
+        controlsSettings.SetActive(true);
+    }
+
+    public void VideoSettings()
+    {
+        optionsMenuUI.SetActive(false);
+        videoSettings.SetActive(true);
     }
 
     private void QuitGame()

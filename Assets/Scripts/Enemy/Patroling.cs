@@ -32,7 +32,6 @@ public class Patroling : MonoBehaviour
 
     private void GotoNextPoint()
     {
-        Debug.Log("patroling");
         if (points.Length == 0)
             return;
 
@@ -44,17 +43,39 @@ public class Patroling : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        CheckPLayer();
-        if (_enemyController.startPlayerChase)
+        EnemyState();
+        //if (_enemyController.startPlayerChase)
+        //{
+        //    ChasePlayer();
+        //}
+        //else
+        //{
+        //    CheckPLayer();
+        //}
+        //_animator.SetFloat("State", 1);
+    }
+
+    private void EnemyState()
+    {
+        _animator.SetFloat("State", 1);
+        Collider[] collision = Physics.OverlapSphere(transform.position, viewRadius, _playerMask);
+        if (collision.Length >= 1)
         {
             ChasePlayer();
         }
-        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+
+        if (_enemyController.startPlayerChase)
         {
-            GotoNextPoint();
+          
+            ChasePlayer();
         }
-        _animator.SetFloat("State", 1);
-        CheckPLayer();
+        else
+        {
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            {
+                GotoNextPoint();
+            }
+        }
     }
 
     private void ChasePlayer()
@@ -62,19 +83,21 @@ public class Patroling : MonoBehaviour
         agent.SetDestination(_player.position);
     }
 
-    private void CheckPLayer()
-    {
-        Collider[] collision = Physics.OverlapSphere(transform.position, viewRadius, _playerMask);
-        if (collision.Length >= 1)
-        {
-            ChasePlayer();
-        }
-        else
-        {
-            //agent.isStopped = true;
-            //agent.ResetPath();
-        }
-    }
+    //private void CheckPLayer()
+    //{
+    //    Collider[] collision = Physics.OverlapSphere(transform.position, viewRadius, _playerMask);
+    //    if (collision.Length >= 1)
+    //    {
+    //        ChasePlayer();
+    //    }
+    //    else
+    //    {
+    //        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+    //        {
+    //            GotoNextPoint();
+    //        }
+    //    }
+    //}
 
     public void OnDrawGizmos()
     {

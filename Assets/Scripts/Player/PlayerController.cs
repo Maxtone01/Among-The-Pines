@@ -10,16 +10,12 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        //Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
     public void Start()
     {
         animator = GetComponent<Animator>();
-        //var mousePos = Input.mousePosition;
-        //mousePos.y = Screen.width / 2;
-        //mousePos.x = Screen.height * 2;
     }
 
     private void OnCollisionEnter(Collision collision)
