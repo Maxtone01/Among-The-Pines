@@ -72,7 +72,6 @@ public class DialogueEditor : EditorWindow
 
             if (createNode != null)
             {
-                Undo.RecordObject(currentDialogue, "Added dialog node");
                 currentDialogue.CreateNode(createNode);
                 createNode = null;
             }
@@ -81,7 +80,6 @@ public class DialogueEditor : EditorWindow
 
             if (deleteNode != null)
             {
-                Undo.RecordObject(currentDialogue, "Deleted dialog node");
                 currentDialogue.DeleteNode(deleteNode);
                 createNode = null;
             }
@@ -110,10 +108,10 @@ public class DialogueEditor : EditorWindow
 
     private void DrawConnections(DialogueNode node)
     {
-        Vector3 startPos = new Vector2(node.position.xMax, node.position.center.y);
+        Vector3 startPos = new Vector2(node.GetRect().xMax, node.GetRect().center.y);
         foreach (DialogueNode child in currentDialogue.GetAllChildren(node))
         {
-            Vector3 endPos = new Vector2(child.position.xMin, child.position.center.y);
+            Vector3 endPos = new Vector2(child.GetRect().xMin, child.GetRect().center.y);
             Vector3 offsetPoint = endPos - startPos;
 
             offsetPoint.y = 0;
@@ -132,19 +130,20 @@ public class DialogueEditor : EditorWindow
             draggingNode = GetNodePoint(Event.current.mousePosition + _scrollPos);
             if (draggingNode != null)
             {
-                draggingOffset = draggingNode.position.position - Event.current.mousePosition;
+                draggingOffset = draggingNode.GetRect().position - Event.current.mousePosition;
+                Selection.activeObject = draggingNode;
             }
             else
             {
                 draggingCanvas = true;
                 draggingCanvasOffset = Event.current.mousePosition + _scrollPos;
+                Selection.activeObject = currentDialogue;
             }
         }
 
         else if (Event.current.type == EventType.MouseDrag && draggingNode != null)
         {
-            Undo.RecordObject(currentDialogue, "Move dialogue node");
-            draggingNode.position.position = Event.current.mousePosition + draggingOffset;
+            draggingNode.SetPosition(Event.current.mousePosition + draggingOffset);
 
             GUI.changed = true;
         }
@@ -171,7 +170,7 @@ public class DialogueEditor : EditorWindow
         DialogueNode foundNode = null;
         foreach (DialogueNode node in currentDialogue.GetAllNodes())
         {
-            if (node.position.Contains(point))
+            if (node.GetRect().Contains(point))
             {
                 foundNode = node;
             }
@@ -181,18 +180,10 @@ public class DialogueEditor : EditorWindow
 
     private void OnGUIChanged(DialogueNode node)
     {
-        GUILayout.BeginArea(node.position, nodeStyle);
-        EditorGUI.BeginChangeCheck();
+        GUILayout.BeginArea(node.GetRect(), nodeStyle);
 
-        EditorGUILayout.LabelField("Node id: " + node.Id);
-        string newText = EditorGUILayout.TextField(node.dialogueText);
-
-        if (EditorGUI.EndChangeCheck())
-        {
-            Undo.RecordObject(currentDialogue, "Update dialog text");
-
-            node.dialogueText = newText;
-        }
+        EditorGUILayout.LabelField("Node id: " + node.name);
+        node.SetText(EditorGUILayout.TextField(node.GetText()));
 
         GUILayout.BeginHorizontal();
 
@@ -229,12 +220,11 @@ public class DialogueEditor : EditorWindow
                 linkNode = null;
             }
         }
-        else if (linkNode.variants.Contains(node.Id))
+        else if (linkNode.GetVariants().Contains(node.name))
         {
             if (GUILayout.Button("Unlink"))
             {
-                Undo.RecordObject(currentDialogue, "Unlink");
-                linkNode.variants.Remove(node.Id);
+                linkNode.RemoveVariant(node.name);
                 linkNode = null;
             }
         }
@@ -243,7 +233,7 @@ public class DialogueEditor : EditorWindow
             if (GUILayout.Button("Link"))
             {
                 Undo.RecordObject(currentDialogue, "Add link");
-                linkNode.variants.Add(node.Id);
+                linkNode.AddVariant(node.name);
                 linkNode = null;
             }
         }
