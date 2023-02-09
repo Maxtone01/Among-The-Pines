@@ -43,6 +43,48 @@ MonoBehaviour:
     y: 208
     width: 200
     height: 100
+--- !u!114 &-5715171792890811398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 8757b87a-e8e4-4a80-a75e-071d4a75eabb
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: 
+  variants: []
+  rect:
+    serializedVersion: 2
+    x: 1249
+    y: 97
+    width: 200
+    height: 100
+--- !u!114 &-4965464899615251538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 2d486c65-da45-4efa-adc3-5b796a871a78
+  m_EditorClassIdentifier: 
+  isPLayer: 1
+  dialogueText: 
+  variants: []
+  rect:
+    serializedVersion: 2
+    x: 1524
+    y: 419
+    width: 200
+    height: 100
 --- !u!114 &-4879636977191267796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,10 +122,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPLayer: 0
   dialogueText: 
-  variants: []
+  variants:
+  - 2d486c65-da45-4efa-adc3-5b796a871a78
   rect:
     serializedVersion: 2
-    x: 1237
+    x: 1259
     y: 316
     width: 200
     height: 100
@@ -130,6 +173,8 @@ MonoBehaviour:
   - {fileID: 1090172789178302595}
   - {fileID: -3444964462176996006}
   - {fileID: -9027138856963260574}
+  - {fileID: -5715171792890811398}
+  - {fileID: -4965464899615251538}
   nodeOffset: {x: 300, y: 0}
 --- !u!114 &1090172789178302595
 MonoBehaviour:
@@ -147,6 +192,7 @@ MonoBehaviour:
   dialogueText: 
   variants:
   - 9f3f0b65-bc57-40e0-a043-761a2e21760a
+  - 8757b87a-e8e4-4a80-a75e-071d4a75eabb
   rect:
     serializedVersion: 2
     x: 1007
