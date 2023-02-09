@@ -9,6 +9,8 @@ public class Dialogue: ScriptableObject, ISerializationCallbackReceiver
 {
     [SerializeField]
     List<DialogueNode> dialogueNodes = new List<DialogueNode>();
+    [SerializeField]
+    Vector2 nodeOffset = new Vector2(300, 0);
 
     Dictionary<string, DialogueNode> nodeLookup = new Dictionary<string, DialogueNode>();
 
@@ -73,13 +75,15 @@ public class Dialogue: ScriptableObject, ISerializationCallbackReceiver
         OnValidate();
     }
 
-    private static DialogueNode NodeCreating(DialogueNode parent)
+    private DialogueNode NodeCreating(DialogueNode parent)
     {
         DialogueNode newNode = CreateInstance<DialogueNode>();
         newNode.name = Guid.NewGuid().ToString();
         if (parent != null)
         {
             parent.AddVariant(newNode.name);
+            newNode.SetPlayerNode(!parent.IsPlayer());
+            newNode.SetPosition(parent.GetRect().position + nodeOffset);
         }
 
         return newNode;

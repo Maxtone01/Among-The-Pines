@@ -12,6 +12,8 @@ public class DialogueEditor : EditorWindow
     [NonSerialized]
     GUIStyle nodeStyle;
     [NonSerialized]
+    GUIStyle playerStyle;
+    [NonSerialized]
     DialogueNode draggingNode = null;
     [NonSerialized]
     Vector2 draggingOffset;
@@ -94,6 +96,11 @@ public class DialogueEditor : EditorWindow
         nodeStyle.normal.background = EditorGUIUtility.Load("node0") as Texture2D;
         nodeStyle.padding = new RectOffset(12, 12, 12, 12);
         nodeStyle.border = new RectOffset(12, 12, 12, 12);
+
+        playerStyle = new GUIStyle();
+        playerStyle.normal.background = EditorGUIUtility.Load("node2") as Texture2D;
+        playerStyle.padding = new RectOffset(12, 12, 12, 12);
+        playerStyle.border = new RectOffset(12, 12, 12, 12);
     }
 
     private void OnSelectionChanged()
@@ -180,7 +187,12 @@ public class DialogueEditor : EditorWindow
 
     private void OnGUIChanged(DialogueNode node)
     {
-        GUILayout.BeginArea(node.GetRect(), nodeStyle);
+        GUIStyle style = nodeStyle;
+        if (node.IsPlayer())
+        {
+            style = playerStyle;
+        }
+        GUILayout.BeginArea(node.GetRect(), style);
 
         EditorGUILayout.LabelField("Node id: " + node.name);
         node.SetText(EditorGUILayout.TextField(node.GetText()));

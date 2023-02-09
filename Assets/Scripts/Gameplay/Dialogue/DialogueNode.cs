@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -5,6 +6,8 @@ using UnityEngine;
 
 public class DialogueNode: ScriptableObject
 {
+    [SerializeField]
+    bool isPLayer = false;
     [SerializeField]
     private string dialogueText;
     [SerializeField]
@@ -56,6 +59,18 @@ public class DialogueNode: ScriptableObject
     {
         Undo.RecordObject(this, "Unlink");
         variants.Remove(variantId);
+        EditorUtility.SetDirty(this);
+    }
+
+    public bool IsPlayer()
+    {
+        return isPLayer;
+    }
+
+    public void SetPlayerNode(bool isPlayerNode)
+    {
+        Undo.RecordObject(this, "Change dialog actor");
+        isPLayer = isPlayerNode;
         EditorUtility.SetDirty(this);
     }
 #endif
