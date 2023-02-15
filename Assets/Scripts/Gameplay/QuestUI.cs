@@ -11,7 +11,7 @@ public class QuestUI : MonoBehaviour
     {
         foreach (string gQuest in quest.GetTasks())
         {
-            Debug.Log($"Quests: {gQuest}");
+           
         }
     }
 }

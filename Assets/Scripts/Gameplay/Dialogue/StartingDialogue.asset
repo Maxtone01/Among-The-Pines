@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9027138856963260574
+--- !u!114 &-3437751617230075703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,124 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 241d98c8-5654-4015-946e-f4a993bc8fcf
+  m_Name: d2f2ba6d-6422-4846-b2ea-10d4b65495fa
   m_EditorClassIdentifier: 
-  isPLayer: 1
-  dialogueText: 
+  isPLayer: 0
+  dialogueText: Abobchik01...
   variants: []
   rect:
     serializedVersion: 2
-    x: 1010
-    y: 356
-    width: 200
-    height: 100
---- !u!114 &-8841916504142507238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 6d3e8926-32cb-4f34-9545-e45aa2be9779
-  m_EditorClassIdentifier: 
-  isPLayer: 0
-  dialogueText: 
-  variants:
-  - f9d4901b-cbb4-4523-bbcb-22adc8fb625f
-  rect:
-    serializedVersion: 2
-    x: 560
-    y: 208
-    width: 200
-    height: 100
---- !u!114 &-5715171792890811398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 8757b87a-e8e4-4a80-a75e-071d4a75eabb
-  m_EditorClassIdentifier: 
-  isPLayer: 0
-  dialogueText: 
-  variants: []
-  rect:
-    serializedVersion: 2
-    x: 1249
-    y: 97
-    width: 200
-    height: 100
---- !u!114 &-4965464899615251538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 2d486c65-da45-4efa-adc3-5b796a871a78
-  m_EditorClassIdentifier: 
-  isPLayer: 1
-  dialogueText: 
-  variants: []
-  rect:
-    serializedVersion: 2
-    x: 1524
-    y: 419
-    width: 200
-    height: 100
---- !u!114 &-4879636977191267796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: f9d4901b-cbb4-4523-bbcb-22adc8fb625f
-  m_EditorClassIdentifier: 
-  isPLayer: 0
-  dialogueText: 
-  variants:
-  - a1ca4ae4-da18-447c-9317-e2515a6b8e47
-  - 241d98c8-5654-4015-946e-f4a993bc8fcf
-  rect:
-    serializedVersion: 2
-    x: 785
-    y: 266
-    width: 200
-    height: 100
---- !u!114 &-3444964462176996006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 9f3f0b65-bc57-40e0-a043-761a2e21760a
-  m_EditorClassIdentifier: 
-  isPLayer: 0
-  dialogueText: 
-  variants:
-  - 2d486c65-da45-4efa-adc3-5b796a871a78
-  rect:
-    serializedVersion: 2
-    x: 1259
-    y: 316
+    x: 906
+    y: 320
     width: 200
     height: 100
 --- !u!114 &-1946662667871378532
@@ -142,15 +33,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
   m_Name: 27002035-d474-4e7a-acd3-cd5cd39610fc
   m_EditorClassIdentifier: 
-  isPLayer: 0
-  dialogueText: dsfsdf
+  isPLayer: 1
+  dialogueText: Hello, my name is beaver
   variants:
   - 3f928973-96e1-401c-a8ab-7700ff5dba74
   - 3e79f1cb-9d77-47b3-ac88-0e33d27ea39e
+  - e807ec98-cf04-4d71-b847-1aa3f019b8c1
+  - af1ec67a-c001-47ee-bb4b-ca98c3b83b52
+  - 3f6e8b2c-938b-484a-abe6-e07ad4e7c3c2
+  - b50ecc2f-0a92-41e3-b866-8c9d659b220e
+  - e6d770fd-f94d-4249-850c-9d1e07e8dd85
+  - 4de3ce12-ba1a-4fad-971d-a2432970f67a
   rect:
     serializedVersion: 2
-    x: 37
-    y: 450
+    x: 18
+    y: 177
+    width: 200
+    height: 100
+--- !u!114 &-1499488383325283580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 7a1d2dd9-3399-4f86-9d0c-8c06ecf0b556
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: ab
+  variants: []
+  rect:
+    serializedVersion: 2
+    x: 916
+    y: 98
+    width: 200
+    height: 100
+--- !u!114 &-850303892947399225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 4de3ce12-ba1a-4fad-971d-a2432970f67a
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: Abobchik
+  variants:
+  - 633ec514-dfd5-4575-b03b-5951cc3e4773
+  rect:
+    serializedVersion: 2
+    x: 318
+    y: 198
+    width: 200
+    height: 100
+--- !u!114 &-701599297097691505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 66c3b9aa-e5e9-402b-a775-8972782fbc11
+  m_EditorClassIdentifier: 
+  isPLayer: 1
+  dialogueText: Aboba
+  variants:
+  - 7a1d2dd9-3399-4f86-9d0c-8c06ecf0b556
+  rect:
+    serializedVersion: 2
+    x: 616
+    y: 98
     width: 200
     height: 100
 --- !u!114 &11400000
@@ -163,20 +125,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df40254538a17dd4b90b4f005e38bbdf, type: 3}
-  m_Name: New Dialogue
+  m_Name: StartingDialogue
   m_EditorClassIdentifier: 
   dialogueNodes:
-  - {fileID: 4043550558225474283}
-  - {fileID: -8841916504142507238}
   - {fileID: -1946662667871378532}
-  - {fileID: -4879636977191267796}
-  - {fileID: 1090172789178302595}
-  - {fileID: -3444964462176996006}
-  - {fileID: -9027138856963260574}
-  - {fileID: -5715171792890811398}
-  - {fileID: -4965464899615251538}
+  - {fileID: 8182994756692549230}
+  - {fileID: 3771560297153965435}
+  - {fileID: -850303892947399225}
+  - {fileID: -701599297097691505}
+  - {fileID: -1499488383325283580}
+  - {fileID: 3657353223127879526}
+  - {fileID: 4133552641677600657}
+  - {fileID: 7127739065559917908}
+  - {fileID: -3437751617230075703}
   nodeOffset: {x: 300, y: 0}
---- !u!114 &1090172789178302595
+--- !u!114 &3657353223127879526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,20 +149,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: a1ca4ae4-da18-447c-9317-e2515a6b8e47
+  m_Name: 633ec514-dfd5-4575-b03b-5951cc3e4773
   m_EditorClassIdentifier: 
   isPLayer: 1
-  dialogueText: 
+  dialogueText: Abobchik
   variants:
-  - 9f3f0b65-bc57-40e0-a043-761a2e21760a
-  - 8757b87a-e8e4-4a80-a75e-071d4a75eabb
+  - 078a12e7-f0a9-4afd-87bb-d4f7bd58daa9
   rect:
     serializedVersion: 2
-    x: 1007
-    y: 196
+    x: 618
+    y: 198
     width: 200
     height: 100
---- !u!114 &4043550558225474283
+--- !u!114 &3771560297153965435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,15 +171,81 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 3f928973-96e1-401c-a8ab-7700ff5dba74
+  m_Name: e6d770fd-f94d-4249-850c-9d1e07e8dd85
   m_EditorClassIdentifier: 
   isPLayer: 0
-  dialogueText: 
+  dialogueText: Cool
   variants:
-  - 6d3e8926-32cb-4f34-9545-e45aa2be9779
+  - 1666c70e-113c-4da1-9fd1-0ed4b2bcca3f
+  - c19cf24b-4005-46ce-b85d-c9fdba1d0bf1
   rect:
     serializedVersion: 2
-    x: 298
-    y: 352
+    x: 306
+    y: 320
+    width: 200
+    height: 100
+--- !u!114 &4133552641677600657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: 078a12e7-f0a9-4afd-87bb-d4f7bd58daa9
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: Abobchik
+  variants: []
+  rect:
+    serializedVersion: 2
+    x: 918
+    y: 198
+    width: 200
+    height: 100
+--- !u!114 &7127739065559917908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: c19cf24b-4005-46ce-b85d-c9fdba1d0bf1
+  m_EditorClassIdentifier: 
+  isPLayer: 1
+  dialogueText: How about you?
+  variants:
+  - d2f2ba6d-6422-4846-b2ea-10d4b65495fa
+  rect:
+    serializedVersion: 2
+    x: 606
+    y: 320
+    width: 200
+    height: 100
+--- !u!114 &8182994756692549230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: b50ecc2f-0a92-41e3-b866-8c9d659b220e
+  m_EditorClassIdentifier: 
+  isPLayer: 0
+  dialogueText: Aboba..
+  variants:
+  - 66c3b9aa-e5e9-402b-a775-8972782fbc11
+  rect:
+    serializedVersion: 2
+    x: 306
+    y: 94
     width: 200
     height: 100

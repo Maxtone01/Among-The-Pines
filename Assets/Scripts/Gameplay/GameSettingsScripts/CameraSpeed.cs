@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraSpeed : MonoBehaviour
 {
-    private CinemachineFreeLook cmFreeLook;
+    public CinemachineFreeLook cmFreeLook;
 
     void Start()
     {

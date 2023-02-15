@@ -26,7 +26,6 @@ public class MovementScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log("Game isn't paused!");
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector2 inputDir = input.normalized;
 

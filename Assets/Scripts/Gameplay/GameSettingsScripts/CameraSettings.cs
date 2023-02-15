@@ -34,10 +34,10 @@ public class CameraSettings : MonoBehaviour
     {
         cameraSpeed.m_XAxis.m_MaxSpeed = sensSlider.value;
         cameraSpeed.m_YAxis.m_MaxSpeed = sensSlider.value;
-        if (!File.Exists(_configFile))
-        { 
-            File.WriteAllText(_configFile, $"camera_speed={sensSlider.value}");
-        }
+        //if (!File.Exists(_configFile))
+        //{ 
+        //    File.WriteAllText(_configFile, $"camera_speed={sensSlider.value}");
+        //}
         _pauseMenu.optionsMenuUI.SetActive(true);
         _pauseMenu.controlsSettings.SetActive(false);
     }

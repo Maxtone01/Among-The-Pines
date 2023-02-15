@@ -44,15 +44,6 @@ public class Patroling : MonoBehaviour
     void FixedUpdate()
     {
         EnemyState();
-        //if (_enemyController.startPlayerChase)
-        //{
-        //    ChasePlayer();
-        //}
-        //else
-        //{
-        //    CheckPLayer();
-        //}
-        //_animator.SetFloat("State", 1);
     }
 
     private void EnemyState()
@@ -82,22 +73,7 @@ public class Patroling : MonoBehaviour
     {
         agent.SetDestination(_player.position);
     }
-
-    //private void CheckPLayer()
-    //{
-    //    Collider[] collision = Physics.OverlapSphere(transform.position, viewRadius, _playerMask);
-    //    if (collision.Length >= 1)
-    //    {
-    //        ChasePlayer();
-    //    }
-    //    else
-    //    {
-    //        if (!agent.pathPending && agent.remainingDistance < 0.5f)
-    //        {
-    //            GotoNextPoint();
-    //        }
-    //    }
-    //}
+    
 
     public void OnDrawGizmos()
     {
