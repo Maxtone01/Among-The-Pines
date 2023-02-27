@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-3437751617230075703
+--- !u!114 &-8142693574261632656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,17 +10,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: d2f2ba6d-6422-4846-b2ea-10d4b65495fa
+  m_Name: 7a5dcd29-6fdb-40ee-a892-1f5308d85cd0
+  m_EditorClassIdentifier: 
+  isPLayer: 1
+  dialogueText: Baobab
+  variants:
+  - 29f0382a-cfc7-4345-a13a-fb331a042d59
+  - ecf27c04-1c85-4518-aef5-6e78aafcbe78
+  rect:
+    serializedVersion: 2
+    x: 594
+    y: 191
+    width: 200
+    height: 100
+  onEnterDialogue: Test
+  onExitDialogue: 
+--- !u!114 &-7368876889538701539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
+  m_Name: c6182389-273a-4eda-829c-05a7f0fba443
   m_EditorClassIdentifier: 
   isPLayer: 0
-  dialogueText: Abobchik01...
+  dialogueText: EXIT
   variants: []
   rect:
     serializedVersion: 2
-    x: 906
-    y: 320
+    x: 855
+    y: 53
     width: 200
     height: 100
+  onEnterDialogue: 
+  onExitDialogue: Exit
 --- !u!114 &-1946662667871378532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50,49 +77,8 @@ MonoBehaviour:
     y: 177
     width: 200
     height: 100
---- !u!114 &-1499488383325283580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 7a1d2dd9-3399-4f86-9d0c-8c06ecf0b556
-  m_EditorClassIdentifier: 
-  isPLayer: 0
-  dialogueText: ab
-  variants: []
-  rect:
-    serializedVersion: 2
-    x: 916
-    y: 98
-    width: 200
-    height: 100
---- !u!114 &-850303892947399225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 4de3ce12-ba1a-4fad-971d-a2432970f67a
-  m_EditorClassIdentifier: 
-  isPLayer: 0
-  dialogueText: Abobchik
-  variants:
-  - 633ec514-dfd5-4575-b03b-5951cc3e4773
-  rect:
-    serializedVersion: 2
-    x: 318
-    y: 198
-    width: 200
-    height: 100
+  onEnterDialogue: 
+  onExitDialogue: 
 --- !u!114 &-701599297097691505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,12 +95,15 @@ MonoBehaviour:
   dialogueText: Aboba
   variants:
   - 7a1d2dd9-3399-4f86-9d0c-8c06ecf0b556
+  - c6182389-273a-4eda-829c-05a7f0fba443
   rect:
     serializedVersion: 2
-    x: 616
-    y: 98
+    x: 587
+    y: 54
     width: 200
     height: 100
+  onEnterDialogue: Test
+  onExitDialogue: 
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,16 +119,12 @@ MonoBehaviour:
   dialogueNodes:
   - {fileID: -1946662667871378532}
   - {fileID: 8182994756692549230}
-  - {fileID: 3771560297153965435}
-  - {fileID: -850303892947399225}
   - {fileID: -701599297097691505}
-  - {fileID: -1499488383325283580}
-  - {fileID: 3657353223127879526}
-  - {fileID: 4133552641677600657}
-  - {fileID: 7127739065559917908}
-  - {fileID: -3437751617230075703}
+  - {fileID: -8142693574261632656}
+  - {fileID: -7368876889538701539}
+  - {fileID: 4430703263588697390}
   nodeOffset: {x: 300, y: 0}
---- !u!114 &3657353223127879526
+--- !u!114 &4430703263588697390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,84 +134,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 633ec514-dfd5-4575-b03b-5951cc3e4773
-  m_EditorClassIdentifier: 
-  isPLayer: 1
-  dialogueText: Abobchik
-  variants:
-  - 078a12e7-f0a9-4afd-87bb-d4f7bd58daa9
-  rect:
-    serializedVersion: 2
-    x: 618
-    y: 198
-    width: 200
-    height: 100
---- !u!114 &3771560297153965435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: e6d770fd-f94d-4249-850c-9d1e07e8dd85
+  m_Name: ecf27c04-1c85-4518-aef5-6e78aafcbe78
   m_EditorClassIdentifier: 
   isPLayer: 0
-  dialogueText: Cool
-  variants:
-  - 1666c70e-113c-4da1-9fd1-0ed4b2bcca3f
-  - c19cf24b-4005-46ce-b85d-c9fdba1d0bf1
-  rect:
-    serializedVersion: 2
-    x: 306
-    y: 320
-    width: 200
-    height: 100
---- !u!114 &4133552641677600657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: 078a12e7-f0a9-4afd-87bb-d4f7bd58daa9
-  m_EditorClassIdentifier: 
-  isPLayer: 0
-  dialogueText: Abobchik
+  dialogueText: EXIT
   variants: []
   rect:
     serializedVersion: 2
-    x: 918
-    y: 198
+    x: 878
+    y: 191
     width: 200
     height: 100
---- !u!114 &7127739065559917908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a056a7acfc30404ab60c18b96dde1db, type: 3}
-  m_Name: c19cf24b-4005-46ce-b85d-c9fdba1d0bf1
-  m_EditorClassIdentifier: 
-  isPLayer: 1
-  dialogueText: How about you?
-  variants:
-  - d2f2ba6d-6422-4846-b2ea-10d4b65495fa
-  rect:
-    serializedVersion: 2
-    x: 606
-    y: 320
-    width: 200
-    height: 100
+  onEnterDialogue: 
+  onExitDialogue: Exit
 --- !u!114 &8182994756692549230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,9 +163,12 @@ MonoBehaviour:
   dialogueText: Aboba..
   variants:
   - 66c3b9aa-e5e9-402b-a775-8972782fbc11
+  - 7a5dcd29-6fdb-40ee-a892-1f5308d85cd0
   rect:
     serializedVersion: 2
-    x: 306
-    y: 94
+    x: 312
+    y: 171
     width: 200
     height: 100
+  onEnterDialogue: Enter
+  onExitDialogue: 

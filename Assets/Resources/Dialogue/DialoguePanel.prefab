@@ -452,6 +452,7 @@ MonoBehaviour:
   nextButton: {fileID: 4817557215123888208}
   dialogueVariant: {fileID: 8897116247379061980}
   dialogueVariantPrefab: {fileID: 8224078173288930454, guid: faee9fc3a1567904eb3209d6e1c7be77, type: 3}
+  dialogueResponse: {fileID: 4876704747286191479}
 --- !u!1 &3691447987725887262
 GameObject:
   m_ObjectHideFlags: 0

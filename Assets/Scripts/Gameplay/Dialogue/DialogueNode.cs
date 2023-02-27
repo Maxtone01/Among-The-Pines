@@ -14,6 +14,10 @@ public class DialogueNode: ScriptableObject
     private List<string> variants = new List<string>();
     [SerializeField]
     private Rect rect = new(0, 0, 200, 100);
+    [SerializeField]
+    string onEnterDialogue;
+    [SerializeField]
+    string onExitDialogue;
 
     public Rect GetRect()
     {
@@ -29,6 +33,22 @@ public class DialogueNode: ScriptableObject
     {
         return variants;
     }
+
+    public string GetOnEnterDialogueAction()
+    {
+        return onEnterDialogue;
+    }
+
+    public string GetOnExitDialogueAction()
+    {
+        return onExitDialogue;
+    }
+
+    public bool GetIsPlayer()
+    { 
+        return isPLayer;
+    }
+
 
 #if UNITY_EDITOR
     public void SetPosition(Vector2 newPosition)

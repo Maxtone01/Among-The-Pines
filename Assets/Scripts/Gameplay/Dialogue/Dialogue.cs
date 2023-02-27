@@ -34,6 +34,29 @@ public class Dialogue: ScriptableObject, ISerializationCallbackReceiver
             }
         }
     }
+
+    public IEnumerable<DialogueNode> GetDialogueChildren(DialogueNode currentNode)
+    {
+        foreach (DialogueNode dialogVariant in GetAllChildren(currentNode))
+        {
+            if (dialogVariant.IsPlayer())
+            { 
+                yield return dialogVariant;
+            }
+        }
+    }
+
+    public IEnumerable<DialogueNode> GetResponseChildren(DialogueNode currentNode)
+    {
+        foreach (DialogueNode dialogVariant in GetAllChildren(currentNode))
+        {
+            if (!dialogVariant.IsPlayer())
+            {
+                yield return dialogVariant;
+            }
+        }
+    }
+
     public IEnumerable<DialogueNode> GetAllNodes()
     {
         return dialogueNodes;

@@ -15,35 +15,70 @@ public class DialogueUI : MonoBehaviour
     Transform dialogueVariant;
     [SerializeField]
     GameObject dialogueVariantPrefab;
+    [SerializeField]
+    GameObject dialogueResponse;
+    [SerializeField]
+    Button quitButton;
+    [SerializeField] 
+    TextMeshProUGUI conversantName;
 
 
     void Start()
     {
         conversantController = GameObject.FindGameObjectWithTag("Player").GetComponent<ConversantController>();
-        nextButton.onClick.AddListener(Next);
-        UpdateUI();
-    }
+        conversantController.OnConversantUpdate += UpdateUI;
 
-    private void Next()
-    {
-        conversantController.SelectNextDialogueVariant();
+        quitButton.onClick.AddListener(() => conversantController.QuitDialogue());
+        nextButton.onClick.AddListener(() => conversantController.SelectNextDialogueVariant());
+
         UpdateUI();
     }
 
     
     void UpdateUI()
     {
-        speakerText.text = conversantController.GetText();
-        nextButton.gameObject.SetActive(conversantController.HasNext());
+        gameObject.SetActive(conversantController.IsActive());
+
+        if (!conversantController.IsActive())
+        {
+            return;
+        }
+
+        conversantName.text = conversantController.GetCurrentConversantName();
+
+        dialogueResponse.SetActive(!conversantController.IsChoosing());
+        dialogueVariant.gameObject.SetActive(conversantController.IsChoosing());
+        
+        if (conversantController.IsChoosing())
+        {
+            CreateVariantList();
+        }
+
+        else 
+        {
+            speakerText.text = conversantController.GetText();
+            nextButton.gameObject.SetActive(conversantController.HasNext());
+        }
+    }
+
+    private void CreateVariantList()
+    {
         foreach (Transform item in dialogueVariant)
         {
             Destroy(item.gameObject);
         }
-        foreach (string choiceText in conversantController.GetChoiceVariants())
+
+        foreach (DialogueNode choiceText in conversantController.GetChoiceVariants())
         {
             GameObject choice = Instantiate(dialogueVariantPrefab, dialogueVariant);
             TextMeshProUGUI textComponent = choice.GetComponentInChildren<TextMeshProUGUI>();
-            textComponent.text = choiceText;
+            textComponent.text = choiceText.GetText();
+            Button btn = choice.GetComponentInChildren<Button>();
+
+            btn.onClick.AddListener(() => 
+            { 
+                conversantController.SelectChoice(choiceText);
+            });
         }
     }
 }
