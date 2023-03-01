@@ -17,15 +17,15 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Collectable.Instance.quantity == 4)
-        { 
-            startPlayerChase = true;
-        }
-        if (Collectable.Instance.quantity == 5)
-        {
-            startPlayerChase = false;
-            ResetPath();
-        }
+        //if (Collectable.Instance.quantity == 4)
+        //{ 
+        //    startPlayerChase = true;
+        //}
+        //if (Collectable.Instance.quantity == 5)
+        //{
+        //    startPlayerChase = false;
+        //    ResetPath();
+        //}
     }
 
     private void ResetPath()
