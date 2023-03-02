@@ -11,7 +11,7 @@ public class CameraSpeed : MonoBehaviour
     {
         cmFreeLook = GetComponent<CinemachineFreeLook>();
 
-        cmFreeLook.m_XAxis.m_MaxSpeed = GameManager.Instance.defaultCamSpeed;
-        cmFreeLook.m_YAxis.m_MaxSpeed = GameManager.Instance.defaultCamSpeed;
+        //cmFreeLook.m_XAxis.m_MaxSpeed = GameManager.Instance.defaultCamSpeed;
+        //cmFreeLook.m_YAxis.m_MaxSpeed = GameManager.Instance.defaultCamSpeed;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public abstract class ToolSpawner : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    GameObject tooltip = null;
+    public GameObject tooltip = null;
 
     [SerializeField]
     GameObject toolPrefab = null;

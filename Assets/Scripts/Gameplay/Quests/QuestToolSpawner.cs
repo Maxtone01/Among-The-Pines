@@ -11,6 +11,7 @@ public class QuestToolSpawner : ToolSpawner
 
     public override void UpdateTool(GameObject tool)
     {
-       
+        QuestStates state = GetComponent<QuestItemUi>().GetQuestStates();
+        tooltip.GetComponent<QuestTooltipUi>().Setup(state);
     }
 }
