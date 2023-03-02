@@ -1256,7 +1256,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248015240}
-  m_LocalRotation: {x: 0.14893085, y: 0.000000015740278, z: -0.000000002370651, w: 0.9888476}
+  m_LocalRotation: {x: 0.14893086, y: -0.000000019717623, z: 0.0000000029696812, w: 0.9888476}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1995,7 +1995,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 471024300}
-  - component: {fileID: 471024299}
   m_Layer: 0
   m_Name: Quest
   m_TagString: Untagged
@@ -2003,19 +2002,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &471024299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 471024298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b52130388c7e44695caa3a49ba298a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quest: {fileID: 11400000, guid: aab19a5ea215af241b8ee09e006a9c74, type: 2}
 --- !u!4 &471024300
 Transform:
   m_ObjectHideFlags: 0
@@ -5533,7 +5519,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.12903711, y: 0.000000037186926, z: -0.000000004838948, w: 0.9916398}
+  m_LocalRotation: {x: 0.12903711, y: -0.000000037186926, z: 0.000000004838948, w: 0.9916398}
   m_LocalPosition: {x: 331.43088, y: 6.864, z: 250.48239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5791,7 +5777,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024542410}
-  m_LocalRotation: {x: 0.12903711, y: 0.000000017062533, z: -0.000000002220262, w: 0.9916398}
+  m_LocalRotation: {x: 0.12903711, y: -0.000000017062533, z: 0.000000002220262, w: 0.9916398}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8604,6 +8590,7 @@ GameObject:
   - component: {fileID: 1516685289}
   - component: {fileID: 1516685294}
   - component: {fileID: 1516685295}
+  - component: {fileID: 1516685296}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -8736,13 +8723,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aec6b3b0e996b64a9f50dedad33add7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerAction: Exit
+  triggerActions: 0
   onTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1516685289}
-        m_TargetAssemblyTypeName: CharacterConversant, Assembly-CSharp
-        m_MethodName: TestExitAction
+      - m_Target: {fileID: 1516685296}
+        m_TargetAssemblyTypeName: QuestGiver, Assembly-CSharp
+        m_MethodName: GiveQuest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8752,6 +8739,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1516685296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516685288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78dc13f5243d0fc4f8198b8ff4059bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 44058ad7a0ba87f4f9fc6d5d5515cde6, type: 2}
 --- !u!1 &1518465124
 GameObject:
   m_ObjectHideFlags: 0
@@ -12937,6 +12937,7 @@ GameObject:
   - component: {fileID: 663385082}
   - component: {fileID: 663385083}
   - component: {fileID: 5866666020817290158}
+  - component: {fileID: 5866666020817290159}
   m_Layer: 3
   m_Name: The Beaver
   m_TagString: Player
@@ -12957,6 +12958,7 @@ GameObject:
   - component: {fileID: 525305187}
   - component: {fileID: 525305188}
   - component: {fileID: 525305189}
+  - component: {fileID: 5866666021947843392}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -16686,6 +16688,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: "\u041A\u0443\u0440\u0432\u0430 \u0411\u041E\u0411\u0415\u0420!!!!!"
+--- !u!114 &5866666020817290159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148104348525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e1aa9fed2d6024fa7dde0f748935f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - quest: {fileID: 11400000, guid: 44058ad7a0ba87f4f9fc6d5d5515cde6, type: 2}
+    completedObjectives:
+    - Abobchik01
+  - quest: {fileID: 11400000, guid: e76cf767e3d17454ea98a6ede3430d00, type: 2}
+    completedObjectives:
+    - Abobchik
 --- !u!95 &5866666021947843391
 Animator:
   serializedVersion: 4
@@ -16706,6 +16727,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5866666021947843392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149117068287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78dc13f5243d0fc4f8198b8ff4059bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 0}
 --- !u!4 &5894649843405941950
 Transform:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1286509187158048444}
   - component: {fileID: 8957842715613641377}
   - component: {fileID: 868443177777954447}
+  - component: {fileID: 6510942371344114537}
   m_Layer: 5
   m_Name: Quest
   m_TagString: Untagged
@@ -79,6 +80,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolPrefab: {fileID: 8288272720310556077, guid: 6e8d3cecec257f74396dfe7d7218c8f6, type: 3}
+--- !u!114 &6510942371344114537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2943647962699631981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d12dc61f57562e4f99069c6818dac8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 3058193911518257372}
+  progress: {fileID: 7976936025781793925}
 --- !u!1 &7343063533564582388
 GameObject:
   m_ObjectHideFlags: 0
