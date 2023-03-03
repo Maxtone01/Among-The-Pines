@@ -23,7 +23,7 @@ MonoBehaviour:
     y: 191
     width: 200
     height: 100
-  onEnterDialogue: Test
+  onEnterDialogue: 
   onExitDialogue: 
 --- !u!114 &-7368876889538701539
 MonoBehaviour:
@@ -38,12 +38,12 @@ MonoBehaviour:
   m_Name: c6182389-273a-4eda-829c-05a7f0fba443
   m_EditorClassIdentifier: 
   isPLayer: 0
-  dialogueText: EXIT
+  dialogueText: Go kill Abobchik01!
   variants: []
   rect:
     serializedVersion: 2
-    x: 855
-    y: 53
+    x: 874
+    y: 51
     width: 200
     height: 100
   onEnterDialogue: 
@@ -102,7 +102,7 @@ MonoBehaviour:
     y: 54
     width: 200
     height: 100
-  onEnterDialogue: Test
+  onEnterDialogue: 
   onExitDialogue: 
 --- !u!114 &11400000
 MonoBehaviour:
@@ -137,16 +137,16 @@ MonoBehaviour:
   m_Name: ecf27c04-1c85-4518-aef5-6e78aafcbe78
   m_EditorClassIdentifier: 
   isPLayer: 0
-  dialogueText: EXIT
+  dialogueText: Go find Abobchik01!
   variants: []
   rect:
     serializedVersion: 2
-    x: 878
-    y: 191
+    x: 883
+    y: 203
     width: 200
     height: 100
   onEnterDialogue: 
-  onExitDialogue: Exit
+  onExitDialogue: Give Quest
 --- !u!114 &8182994756692549230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,5 +170,5 @@ MonoBehaviour:
     y: 171
     width: 200
     height: 100
-  onEnterDialogue: Enter
+  onEnterDialogue: 
   onExitDialogue: 

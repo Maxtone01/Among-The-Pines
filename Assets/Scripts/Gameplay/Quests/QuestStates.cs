@@ -1,12 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class QuestStates
 {
-    [SerializeField] Quest quest;
-    [SerializeField] List<string> completedObjectives;
+    Quest quest;
+    List<string> completedObjectives = new List<string>();
+    private object objectState;
+
+    [System.Serializable]
+    class QuestStatusRecord
+    {
+        public string questName;
+        public List<string> completedObjectives;
+    }
+    public QuestStates(Quest quest)
+    {
+        this.quest = quest;
+    }
+
+    public QuestStates(object objectState)
+    {
+        QuestStatusRecord state = objectState as QuestStatusRecord;
+        quest = Quest.GetByName(state.questName);
+        completedObjectives = state.completedObjectives;
+    }
 
     public Quest GetQuest()
     {
@@ -21,5 +40,13 @@ public class QuestStates
     public bool IsCompletedQuest(string objective) 
     {
         return completedObjectives.Contains(objective);
+    }
+
+    public void CompleteObjective(string objective)
+    {
+        if (quest.HasObjective(objective))
+        {
+            completedObjectives.Add(objective);
+        };
     }
 }

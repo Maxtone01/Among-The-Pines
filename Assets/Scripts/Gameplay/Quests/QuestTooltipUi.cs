@@ -13,20 +13,22 @@ public class QuestTooltipUi : MonoBehaviour
     public void Setup(QuestStates state)
     {
         Quest quest = state.GetQuest();
+
         ClearPrefab();
+
         titleText.text = quest.GetTitle();
 
-        foreach (string item in quest.GetOjectives())
+        foreach (Quest.Objective item in quest.GetOjectives())
         {
             GameObject prefab = objectiveIncompletedPrefab;
 
-            if (state.IsCompletedQuest(item))
+            if (state.IsCompletedQuest(item.reference))
             {
                 prefab = objectivePrefab;
             }
             GameObject objInstance = Instantiate(prefab, objectiveContainer);
             TextMeshProUGUI objText = objInstance.GetComponentInChildren<TextMeshProUGUI>();
-            objText.text = item;
+            objText.text = item.description;
         }
     }
 

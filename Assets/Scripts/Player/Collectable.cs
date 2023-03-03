@@ -3,8 +3,9 @@ using UnityEngine.UI;
 
 public class Collectable : MonoBehaviour
 {
-    Text collectScore;
-    public GameObject enemyText;
+    [SerializeField] QuestCompletion qCompl;
+    //Text collectScore;
+    //public GameObject enemyText;
 
     public static int maxQuantity = 6;
     public int quantity = 0;
@@ -13,17 +14,17 @@ public class Collectable : MonoBehaviour
 
     private void Start()
     {
-        enemyText.SetActive(false);
-        collectScore = GetComponent<Text>();
+        //enemyText.SetActive(false);
+        //collectScore = GetComponent<Text>();
         Instance = this;
     }
 
     public void FixedUpdate()
     {
-        collectScore.text = $"{quantity} / {maxQuantity}";
-        if (quantity == 4)
+        //collectScore.text = $"{quantity} / {maxQuantity}";
+        if (quantity == 1)
         {
-            enemyText.SetActive(true);
+            //enemyText.SetActive(true);
         }
     }
 }

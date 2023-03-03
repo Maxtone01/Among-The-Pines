@@ -5,8 +5,16 @@ using UnityEngine;
 public class QuestUI : MonoBehaviour
 {
     [SerializeField] QuestItemUi questPrefab;
+    QuestList questList;
 
     public void Start()
+    {
+        questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
+        questList.onQuestUpdated += RedrawQuest;
+        RedrawQuest();
+    }
+
+    private void RedrawQuest()
     {
         foreach (Transform uiElement in this.transform)
         {
@@ -15,7 +23,7 @@ public class QuestUI : MonoBehaviour
 
         QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
 
-        foreach (QuestStates state in questList.GetStates()) 
+        foreach (QuestStates state in questList.GetStates())
         {
             QuestItemUi uiInstance = Instantiate<QuestItemUi>(questPrefab, transform);
             uiInstance.Setup(state);
