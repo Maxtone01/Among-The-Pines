@@ -7,7 +7,7 @@ public class MovementScript : MonoBehaviour
     [SerializeField]
     private PlayerController _playerController;
 
-    [SerializeField] private float _movementForce = 10f;
+    [SerializeField] public float _movementForce = 10f;
 
     public Transform cam;
 

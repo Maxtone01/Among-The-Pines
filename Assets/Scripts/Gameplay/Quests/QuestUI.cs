@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class QuestUI : MonoBehaviour
 {
     [SerializeField] QuestItemUi questPrefab;
     QuestList questList;
+    [SerializeField] TextMeshProUGUI questTitle;
 
     public void Start()
     {
@@ -23,7 +25,7 @@ public class QuestUI : MonoBehaviour
 
         QuestList questList = GameObject.FindGameObjectWithTag("Player").GetComponent<QuestList>();
 
-        foreach (QuestStates state in questList.GetStates())
+        foreach (QuestStates state in questList.GetQuests())
         {
             QuestItemUi uiInstance = Instantiate<QuestItemUi>(questPrefab, transform);
             uiInstance.Setup(state);

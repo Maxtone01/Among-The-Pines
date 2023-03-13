@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     public bool startPlayerChase;
     private Patroling _patroling;
-
+    private GameManager _gameManager;
     void Start()
     {
         startPlayerChase = false;
@@ -27,6 +27,18 @@ public class EnemyController : MonoBehaviour
         //    ResetPath();
         //}
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "The Beaver")
+        {
+            Debug.Log("Game over");
+            Destroy(other.gameObject);
+            _gameManager = GameObject.FindGameObjectWithTag("Game Manager").GetComponent<GameManager>();
+            _gameManager.StartGame();
+        }
+    }
+
 
     private void ResetPath()
     {

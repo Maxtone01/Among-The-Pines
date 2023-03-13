@@ -7,7 +7,6 @@ public class QuestStates
 {
     Quest quest;
     List<string> completedObjectives = new List<string>();
-    private object objectState;
 
     [System.Serializable]
     class QuestStatusRecord

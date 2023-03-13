@@ -49,8 +49,8 @@ public class Patroling : MonoBehaviour
     private void EnemyState()
     {
         _animator.SetFloat("State", 1);
-        Collider[] collision = Physics.OverlapSphere(transform.position, viewRadius, _playerMask);
-        if (collision.Length >= 1)
+        Collider[] chaseCollision = Physics.OverlapSphere(transform.position, viewRadius, _playerMask);
+        if (chaseCollision.Length >= 1)
         {
             ChasePlayer();
         }
@@ -73,7 +73,6 @@ public class Patroling : MonoBehaviour
     {
         agent.SetDestination(_player.position);
     }
-    
 
     public void OnDrawGizmos()
     {

@@ -11,7 +11,6 @@ public class CharacterConversant : MonoBehaviour
     private float viewRadius;
     [SerializeField]
     string characterName;
-    private bool isStartDialogue = false;
     public LayerMask _playerMask;
 
     public void StartDialogue(PlayerController dialogueController)
@@ -30,7 +29,6 @@ public class CharacterConversant : MonoBehaviour
         {
             dialogueController = collider.gameObject.GetComponent<PlayerController>();
             StartDialogue(dialogueController);
-            Debug.Log("Entered trigger");
         }
     }
 
@@ -40,7 +38,6 @@ public class CharacterConversant : MonoBehaviour
         {
             EndDialogue(dialogueController);
             dialogueController = null;
-            Debug.Log("Exit trigger");
         }
     }
 

@@ -49,9 +49,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
 
-        /*We need to check if "options" menu is active, if so, 
-         set state to active to pause menu component and unactive to options
-         It needs for properly showing elements of pause menu when escape is pressed again from the game*/
         if (optionsMenu.activeSelf)
         {
             optionsMenu.SetActive(false);

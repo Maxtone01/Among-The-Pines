@@ -23,6 +23,7 @@ public class ConversantController : MonoBehaviour
         TriggerEnterAction();
 
         OnConversantUpdate();
+        GameManager.Instance.MouseState(States.GameStates.Enter_Dialogue);
     }
 
     public void QuitDialogue()
@@ -32,7 +33,10 @@ public class ConversantController : MonoBehaviour
         currentNode = null;
         isChoosing = false;
         currentConversant = null;
+
         OnConversantUpdate();
+
+        GameManager.Instance.MouseState(States.GameStates.Exit_Dialogue);
     }
 
     public bool IsActive()
@@ -57,7 +61,7 @@ public class ConversantController : MonoBehaviour
 
     public IEnumerable<DialogueNode> GetChoiceVariants()
     {
-        return dialogueTree.GetDialogueChildren(currentNode);
+        return dialogueTree.GetNodeChildren(currentNode);
     }
 
     public string GetCurrentConversantName()
@@ -82,7 +86,7 @@ public class ConversantController : MonoBehaviour
 
     public void SelectNextDialogueVariant()
     {
-        int numResponses = dialogueTree.GetDialogueChildren(currentNode).Count();
+        int numResponses = dialogueTree.GetNodeChildren(currentNode).Count();
         if (numResponses > 0)
         {
             isChoosing = true;
@@ -92,10 +96,10 @@ public class ConversantController : MonoBehaviour
         }
 
         DialogueNode[] variant = dialogueTree.GetResponseChildren(currentNode).ToArray();
-        int randomIndex = UnityEngine.Random.Range(0, variant.Count());
+        //int randomIndex = UnityEngine.Random.Range(0, variant.Count());
         
         TriggerExitAction();
-        currentNode = variant[randomIndex];
+        currentNode = variant[0];
         TriggerEnterAction();
 
         OnConversantUpdate();
@@ -103,7 +107,7 @@ public class ConversantController : MonoBehaviour
 
     public bool HasNext()
     {
-        return dialogueTree.GetAllChildren(currentNode).Count() > 0;
+        return dialogueTree.GetAllNodeChildren(currentNode).Count() > 0;
     }
 
     private void TriggerEnterAction()

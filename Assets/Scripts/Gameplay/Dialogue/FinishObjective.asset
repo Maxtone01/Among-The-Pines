@@ -33,10 +33,11 @@ MonoBehaviour:
   dialogueText: Hello, did you find Abobchik?
   variants:
   - b4b9438b-c83e-4516-93a3-be89a5d58ac4
+  - 931b3b45-d6a4-4ec3-a6aa-c68328bd6491
   rect:
     serializedVersion: 2
-    x: 48
-    y: 170
+    x: 67
+    y: 164
     width: 200
     height: 100
   onEnterDialogue: 
@@ -79,11 +80,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPLayer: 0
   dialogueText: Fine
-  variants: []
+  variants:
+  - 93d81f74-2447-417c-9388-e72241dd0f89
   rect:
     serializedVersion: 2
-    x: 648
-    y: 170
+    x: 652
+    y: 199
     width: 200
     height: 100
   onEnterDialogue: 

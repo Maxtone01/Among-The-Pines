@@ -24,7 +24,7 @@ public class Dialogue: ScriptableObject, ISerializationCallbackReceiver
         }
     }
 
-    public IEnumerable<DialogueNode> GetAllChildren(DialogueNode parentNode)
+    public IEnumerable<DialogueNode> GetAllNodeChildren(DialogueNode parentNode)
     {
         foreach (string childId in parentNode.GetVariants())
         {
@@ -35,9 +35,9 @@ public class Dialogue: ScriptableObject, ISerializationCallbackReceiver
         }
     }
 
-    public IEnumerable<DialogueNode> GetDialogueChildren(DialogueNode currentNode)
+    public IEnumerable<DialogueNode> GetNodeChildren(DialogueNode currentNode)
     {
-        foreach (DialogueNode dialogVariant in GetAllChildren(currentNode))
+        foreach (DialogueNode dialogVariant in GetAllNodeChildren(currentNode))
         {
             if (dialogVariant.IsPlayer())
             { 
@@ -48,7 +48,7 @@ public class Dialogue: ScriptableObject, ISerializationCallbackReceiver
 
     public IEnumerable<DialogueNode> GetResponseChildren(DialogueNode currentNode)
     {
-        foreach (DialogueNode dialogVariant in GetAllChildren(currentNode))
+        foreach (DialogueNode dialogVariant in GetAllNodeChildren(currentNode))
         {
             if (!dialogVariant.IsPlayer())
             {

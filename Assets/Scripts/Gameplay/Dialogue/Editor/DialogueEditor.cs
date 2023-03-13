@@ -116,7 +116,7 @@ public class DialogueEditor : EditorWindow
     private void DrawConnections(DialogueNode node)
     {
         Vector3 startPos = new Vector2(node.GetRect().xMax, node.GetRect().center.y);
-        foreach (DialogueNode child in currentDialogue.GetAllChildren(node))
+        foreach (DialogueNode child in currentDialogue.GetAllNodeChildren(node))
         {
             Vector3 endPos = new Vector2(child.GetRect().xMin, child.GetRect().center.y);
             Vector3 offsetPoint = endPos - startPos;

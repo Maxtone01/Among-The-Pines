@@ -8,10 +8,14 @@ public class PlayerController : MonoBehaviour
 {
     internal Animator animator;
 
-    private void Awake()
-    {
-        Cursor.visible = false;
-    }
+    [SerializeField] QuestCompletion qCompl;
+    [SerializeField] QuestList questList;
+    [SerializeField] List<Quest> qList = new List<Quest>();
+    [SerializeField] GameObject cameraState;
+    [SerializeField] ConversantController characterConversant;
+    [SerializeField] MovementScript moveScript;
+
+    private List<string> questNames = new List<string>();
 
     public void Start()
     {
@@ -22,8 +26,25 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Acorn"))
         {
-            Collectable.Instance.quantity++;
-            Destroy(collision.gameObject);
+            CollectAcorn(collision);
+        }
+    }
+
+    private void CollectAcorn(Collision collision)
+    {
+        int acorn = 0;
+        acorn++;
+
+        if (acorn == 1)
+        {
+            foreach (QuestStates questName in questList.GetQuests())
+            {
+                if (questName.GetQuest().GetTitle() == "Знайти 6 жолудів")
+                {
+                    qCompl.CompleteObjective(qList[0]);
+                    Destroy(collision.gameObject);
+                }
+            }
         }
     }
 

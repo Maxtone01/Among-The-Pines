@@ -63,9 +63,9 @@ public class DialogueUI : MonoBehaviour
 
     private void CreateVariantList()
     {
-        foreach (Transform item in dialogueVariant)
+        foreach (Transform variantChild in dialogueVariant)
         {
-            Destroy(item.gameObject);
+            Destroy(variantChild.gameObject);
         }
 
         foreach (DialogueNode choiceText in conversantController.GetChoiceVariants())

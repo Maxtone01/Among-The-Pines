@@ -10,6 +10,7 @@ public class QuestTooltipUi : MonoBehaviour
     [SerializeField] Transform objectiveContainer;
     [SerializeField] GameObject objectivePrefab;
     [SerializeField] GameObject objectiveIncompletedPrefab;
+    [SerializeField] TextMeshProUGUI objectivesCounter;
     public void Setup(QuestStates state)
     {
         Quest quest = state.GetQuest();
@@ -27,8 +28,16 @@ public class QuestTooltipUi : MonoBehaviour
                 prefab = objectivePrefab;
             }
             GameObject objInstance = Instantiate(prefab, objectiveContainer);
-            TextMeshProUGUI objText = objInstance.GetComponentInChildren<TextMeshProUGUI>();
-            objText.text = item.description;
+            TextMeshProUGUI [] objText = objInstance.GetComponentsInChildren<TextMeshProUGUI>();
+            objText[0].text = item.description;
+            if (item.counted > 0)
+            {
+                objText[1].text = "0 / " + item.counted.ToString();
+            }
+            else
+            {
+                objText[1].text = null;
+            }
         }
     }
 

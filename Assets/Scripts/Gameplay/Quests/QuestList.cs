@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class QuestList : MonoBehaviour
 {
-    List<QuestStates> states = new List<QuestStates>();
+    List<QuestStates> questList = new List<QuestStates>();
 
     public Action onQuestUpdated;
 
@@ -16,7 +16,7 @@ public class QuestList : MonoBehaviour
             return;
         }
         QuestStates newState = new QuestStates(quest);
-        states.Add(newState);
+        questList.Add(newState);
         if (onQuestUpdated != null)
         {
             onQuestUpdated();
@@ -38,14 +38,14 @@ public class QuestList : MonoBehaviour
         return GetQuestState(quest) != null;
     }
 
-    public IEnumerable<QuestStates> GetStates()
+    public IEnumerable<QuestStates> GetQuests()
     {
-        return states;
+        return questList;
     }
 
     private QuestStates GetQuestState(Quest quest)
     {
-        foreach (QuestStates state in states)
+        foreach (QuestStates state in questList)
         {
             if (state.GetQuest() == quest)
             {
