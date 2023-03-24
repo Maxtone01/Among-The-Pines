@@ -6,8 +6,10 @@ TagManager:
   tags:
   - Collectable
   - Branches
-  - Acorn
   - Game Manager
+  - Dialogue Panel
+  - UI
+  - Flower
   layers:
   - Default
   - TransparentFX

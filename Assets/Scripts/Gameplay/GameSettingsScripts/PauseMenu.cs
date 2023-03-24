@@ -18,18 +18,25 @@ public class PauseMenu : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject videoSettings;
     public GameObject controlsSettings;
+    private GameObject dialogueController;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (gameIsPaused)
+            dialogueController = GameObject.FindGameObjectWithTag("Dialogue Panel");
+            if (dialogueController == null & !gameIsPaused)
             {
-                ResumeGame();
+                PauseGame();
+            }
+            else if (!gameIsPaused)
+            {
+                DialogueUI dialogue = dialogueController.GetComponent<DialogueUI>();
+                dialogue.conversantController.QuitDialogue();
             }
             else
             {
-                PauseGame();
+                ResumeGame();
             }
         }
     }

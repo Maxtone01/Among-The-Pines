@@ -26,6 +26,25 @@ public class ConversantController : MonoBehaviour
         GameManager.Instance.MouseState(States.GameStates.Enter_Dialogue);
     }
 
+    public void SelectNextDialogueVariant()
+    {
+        int numResponses = dialogueTree.GetNodeChildren(currentNode).Count();
+        if (numResponses > 0)
+        {
+            isChoosing = true;
+            TriggerExitAction();
+            OnConversantUpdate();
+            return;
+        }
+
+        DialogueNode[] variant = dialogueTree.GetResponseChildren(currentNode).ToArray();
+
+        TriggerExitAction();
+        currentNode = variant[0];
+        TriggerEnterAction();
+
+        OnConversantUpdate();
+    }
     public void QuitDialogue()
     {
         dialogueTree = null;
@@ -82,27 +101,6 @@ public class ConversantController : MonoBehaviour
         TriggerEnterAction();
         isChoosing = false;
         SelectNextDialogueVariant();
-    }
-
-    public void SelectNextDialogueVariant()
-    {
-        int numResponses = dialogueTree.GetNodeChildren(currentNode).Count();
-        if (numResponses > 0)
-        {
-            isChoosing = true;
-            TriggerExitAction();
-            OnConversantUpdate();
-            return;
-        }
-
-        DialogueNode[] variant = dialogueTree.GetResponseChildren(currentNode).ToArray();
-        //int randomIndex = UnityEngine.Random.Range(0, variant.Count());
-        
-        TriggerExitAction();
-        currentNode = variant[0];
-        TriggerEnterAction();
-
-        OnConversantUpdate();
     }
 
     public bool HasNext()

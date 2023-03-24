@@ -30,9 +30,9 @@ public class QuestTooltipUi : MonoBehaviour
             GameObject objInstance = Instantiate(prefab, objectiveContainer);
             TextMeshProUGUI [] objText = objInstance.GetComponentsInChildren<TextMeshProUGUI>();
             objText[0].text = item.description;
-            if (item.counted > 0)
+            if (item.itemToCollect > 0)
             {
-                objText[1].text = "0 / " + item.counted.ToString();
+                objText[1].text = item.itemCollected.ToString() + " / " + item.itemToCollect.ToString();
             }
             else
             {

@@ -48,16 +48,16 @@ public class Patroling : MonoBehaviour
 
     private void EnemyState()
     {
-        _animator.SetFloat("State", 1);
+        _animator.SetFloat("State", 3);
         Collider[] chaseCollision = Physics.OverlapSphere(transform.position, viewRadius, _playerMask);
-        if (chaseCollision.Length >= 1)
+        if (chaseCollision.Length == 1)
         {
             ChasePlayer();
         }
 
         if (_enemyController.startPlayerChase)
         {
-          
+
             ChasePlayer();
         }
         else
