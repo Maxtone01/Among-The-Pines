@@ -61,12 +61,12 @@ MonoBehaviour:
   m_Name: ecf27c04-1c85-4518-aef5-6e78aafcbe78
   m_EditorClassIdentifier: 
   isPLayer: 0
-  dialogueText: Go find Abobchik01!
+  dialogueText: Go kill Abobchik01!
   variants:
   - e3f79dd9-1691-4172-a126-a61f1948e4eb
   rect:
     serializedVersion: 2
-    x: 614
+    x: 640
     y: 173
     width: 200
     height: 100

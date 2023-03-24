@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
-    ConversantController conversantController;
+    public ConversantController conversantController;
     [SerializeField]
     TextMeshProUGUI speakerText;
     [SerializeField]
@@ -28,8 +28,8 @@ public class DialogueUI : MonoBehaviour
         conversantController = GameObject.FindGameObjectWithTag("Player").GetComponent<ConversantController>();
         conversantController.OnConversantUpdate += UpdateUI;
 
-        quitButton.onClick.AddListener(() => conversantController.QuitDialogue());
-        nextButton.onClick.AddListener(() => conversantController.SelectNextDialogueVariant());
+        //quitButton.onClick.AddListener(() => conversantController.QuitDialogue());
+        //nextButton.onClick.AddListener(() => conversantController.SelectNextDialogueVariant());
 
         UpdateUI();
     }

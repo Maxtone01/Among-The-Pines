@@ -21,7 +21,8 @@ public class Quest : ScriptableObject
     {
         public string reference;
         public string description;
-        public int counted;
+        public int itemToCollect;
+        public int itemCollected;
     }
 
     public string GetTitle()

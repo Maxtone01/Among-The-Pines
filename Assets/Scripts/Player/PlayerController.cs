@@ -7,42 +7,92 @@ using UnityEngine.AI;
 public class PlayerController : MonoBehaviour
 {
     internal Animator animator;
-
+    private GameObject dialogueController;
+    private QuestTooltipUi questTooltip;
+    [SerializeField] GameObject tooltipGameObject;
+    PauseMenu _pauseMenu;
     [SerializeField] QuestCompletion qCompl;
     [SerializeField] QuestList questList;
-    [SerializeField] List<Quest> qList = new List<Quest>();
     [SerializeField] GameObject cameraState;
     [SerializeField] ConversantController characterConversant;
     [SerializeField] MovementScript moveScript;
+    [SerializeField]
+    private Quest quest;
+
 
     private List<string> questNames = new List<string>();
+    private bool isTooltipActive = false;
 
     public void Start()
     {
+        _pauseMenu = GameObject.FindGameObjectWithTag("UI").GetComponent<PauseMenu>();
+        questTooltip = tooltipGameObject.GetComponent<QuestTooltipUi>();
         animator = GetComponent<Animator>();
+
+        questList.AddQuest(quest);
     }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            dialogueController = GameObject.FindGameObjectWithTag("Dialogue Panel");
+            if (dialogueController == null)
+            {
+                return;
+            }
+            else
+            {
+                DialogueUI dialogue = dialogueController.GetComponent<DialogueUI>();
+                dialogue.conversantController.SelectNextDialogueVariant();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!isTooltipActive)
+            {
+                isTooltipActive = true;
+                tooltipGameObject.SetActive(true);
+                foreach (QuestStates questState in questList.GetQuests())
+                {
+                    questTooltip.Setup(questState);
+                }
+            }
+            else 
+            {
+                isTooltipActive = false;
+                tooltipGameObject.SetActive(false);
+            }
+        }
+    }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Acorn"))
+        if (collision.gameObject.CompareTag("Collectable"))
         {
-            CollectAcorn(collision);
+            CollectItem(collision);
         }
     }
 
-    private void CollectAcorn(Collision collision)
+    private void CollectItem(Collision collision)
     {
-        int acorn = 0;
-        acorn++;
-
-        if (acorn == 1)
+        Destroy(collision.gameObject);
+        if (collision.gameObject.name == "Flower")
         {
-            foreach (QuestStates questName in questList.GetQuests())
+            foreach (QuestStates questState in questList.GetQuests())
             {
-                if (questName.GetQuest().GetTitle() == "Знайти 6 жолудів")
+                Quest quest = questState.GetQuest();
+                foreach (Quest.Objective qObjective in quest.GetOjectives())
                 {
-                    qCompl.CompleteObjective(qList[0]);
-                    Destroy(collision.gameObject);
+                    if (qObjective.itemToCollect > qObjective.itemCollected)
+                    {
+                        qObjective.itemCollected++;
+                    }
+                    if (qObjective.itemCollected >= 7)
+                    {
+                        qCompl.CompleteObjective(quest);
+                    }
                 }
             }
         }

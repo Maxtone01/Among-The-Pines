@@ -12,8 +12,9 @@ public class QuestItemUi : MonoBehaviour
     public void Setup(QuestStates state)
     {
         this.state = state;
-        //title.text = state.GetQuest().GetTitle();
-        title.text = state.GetQuest().name;
+        title.text = state.GetQuest().GetTitle();
+        Debug.Log(state.GetQuest().questName);
+        //title.text = state.GetQuest().name;
         progress.text = state.GetCompletedQuests() + " / " + state.GetQuest().GetObjectiveCount();
     }
 

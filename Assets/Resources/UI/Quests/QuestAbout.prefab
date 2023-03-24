@@ -611,7 +611,7 @@ MonoBehaviour:
   objectiveContainer: {fileID: 1989218426680651968}
   objectivePrefab: {fileID: 6078339629979597801, guid: e186452135ddee645937ad7262886b24, type: 3}
   objectiveIncompletedPrefab: {fileID: 4053684320942814107, guid: d0f6bfc2d11e3ea4592c089fd4b8959e, type: 3}
-  objectivesCounter: {fileID: 0}
+  objectivesCounter: {fileID: 4411998706914288459}
 --- !u!1 &8658305039481809844
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,3 +975,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 690689579810785440, guid: e186452135ddee645937ad7262886b24, type: 3}
   m_PrefabInstance: {fileID: 3219313059520193150}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4411998706914288459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1267725196570247477, guid: e186452135ddee645937ad7262886b24, type: 3}
+  m_PrefabInstance: {fileID: 3219313059520193150}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -6,6 +6,7 @@ using UnityEngine;
 public class QuestList : MonoBehaviour
 {
     List<QuestStates> questList = new List<QuestStates>();
+    List<QuestStates> currentQuest = new List<QuestStates>();
 
     public Action onQuestUpdated;
 
@@ -17,6 +18,7 @@ public class QuestList : MonoBehaviour
         }
         QuestStates newState = new QuestStates(quest);
         questList.Add(newState);
+        AddCurrentQuest(newState);
         if (onQuestUpdated != null)
         {
             onQuestUpdated();
@@ -53,5 +55,20 @@ public class QuestList : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public IEnumerable<QuestStates> GetCurrentQuest()
+    {
+        return currentQuest;
+    }
+
+    public void AddCurrentQuest(QuestStates quest)
+    {
+        currentQuest.Add(quest);
+    }
+
+    public void RemoveCurrentQuest(QuestStates quest)
+    {
+        currentQuest.Remove(quest);
     }
 }

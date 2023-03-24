@@ -32,7 +32,6 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.name == "The Beaver")
         {
-            Debug.Log("Game over");
             Destroy(other.gameObject);
             _gameManager = GameObject.FindGameObjectWithTag("Game Manager").GetComponent<GameManager>();
             _gameManager.StartGame();
